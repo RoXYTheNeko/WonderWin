@@ -9,7 +9,7 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
 
-	<script type="text/javascript" src="js/jsexplorer.js"></script>
+	<script type="text/javascript" src="js/kitty.js"></script>
 	<script type="text/javascript" src="js/clock.js"></script>
 	
 
