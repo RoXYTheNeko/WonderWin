@@ -32,18 +32,18 @@
 }
 
 
-.button-3d #maximize {
+.button-3d #btnMaximize {
 	background-image: url(../icons/maximize.png);
 	background-position: 1px 1px 0 0;
     background-repeat: no-repeat;
 }
 
-.button-3d #close {
+.button-3d #btnClose {
     background-image: url(../icons/close.png);
 
 }
 
-.button-3d #minimize {
+.button-3d #btnMinimize {
     background-image: url(../icons/minimize.png);
     margin-right: auto;
 

@@ -7,9 +7,9 @@ Explorer
 	<div class="wTopBar" id="explorerheader"> 
 		<p>Mes Créations</p>
 		<div class="button-3d">
-			<button id="minimize" onclick="closeExplorer()"></button>
-			<button id="maximize" onclick="resizeExplorer()"></button>
-			<button id="close" onclick="closeExplorer()"></button>
+			<button id="btnMinimize" onclick="closeExplorer()"></button>
+			<button id="btnMaximize" onclick="resizeExplorer()"></button>
+			<button id="btnClose" onclick="closeExplorer()"></button>
 		</div>
 	</div>
 
@@ -28,8 +28,8 @@ Minesweeper
 	<div class="wTopBar"> 
 		<p>Démineur</p>
 		<div class="button-3d">
-			<button id="minimize" onclick="closeMinesweeper()"></button>
-			<button id="close" onclick="closeMinesweeper()"></button>
+			<button id="btnMinimize" onclick="closeMinesweeper()"></button>
+			<button id="btnClose" onclick="closeMinesweeper()"></button>
 		</div>
 	</div>
 	<iframe src="prgms/minesweeper/minecore.html" height="223" width="173" scrolling="no"></iframe>
@@ -44,9 +44,9 @@ Crédits
 	<div class="wTopBar"> 
 		<p>Crédits</p>
 		<div class="button-3d">
-			<button id="minimize" onclick="closeCredits()"></button>
-			<button id="maximize" onclick="resizeCredits()"></button>
-			<button id="close" onclick="closeCredits()"></button>
+			<button id="btnMinimize" onclick="closeCredits()"></button>
+			<button id="btnMaximize" onclick="resizeCredits()"></button>
+			<button id="bntClose" onclick="closeCredits()"></button>
 		</div>
 	</div>
 	<iframe src="prgms/credits.html" width="748" height="574" scrolling="yes"></iframe>
