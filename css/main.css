@@ -1,0 +1,138 @@
+@font-face {
+ font-family: "PxSans";
+ src: url("../fonts/px-sans-nouveaux/px_sans_nouveaux.woff2") format("woff2"),
+        url("../fonts/px-sans-nouveaux/px_sans_nouveaux.woff") format("woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+	font-family: PxSans, Verdana, Arial, sans-serif;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.desktop {
+	/*background-color: #008080;*/
+	background-image: url(../images/clouds.bmp);
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+}
+
+.center-thing { /*A retirer pour deplacer les fenetres*/
+	display: flex;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto; */
+}
+
+.grayBg {
+	background-color: #c2c2c2;
+	width: 100%;
+	height: 90%;
+}
+
+.links {
+	border-spacing: 20px;
+}
+
+.links tr td { 
+	/*border: 1px solid black;*/
+}
+
+.links a {
+	font-size: 9px;
+	color: white !important;
+	text-shadow: 1px 1px #333;
+}
+
+#explorer {
+	position: absolute;
+	width: 750px;
+	height: 600px;
+	border: outset 3px;
+	display: block;
+	visibility: hidden;
+	margin: 0, auto;
+}
+
+#explorerheader {
+	background-color: white;
+}
+
+.exContener {
+	background-color: white;
+}
+
+
+
+#minesweeper {
+	width: 178px;
+	height: 258px;
+	border: outset 3px;
+	display: block;
+	visibility: hidden;
+	margin: 0, auto;
+}
+
+#credits {
+	width: 750px;
+	height: 600px;
+	border: outset 3px;
+	display: block;
+	visibility: hidden;
+	margin: 0, auto;
+	background-color: white;
+}
+
+#bgHalt {
+	height: 100vh;
+	width: 100vw;
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0;
+	position: fixed;
+
+}
+
+#questionHalt {
+	width: 300px;
+	height: 200px;
+	border: outset 3px;
+	display: block;
+	visibility: hidden;
+	margin: 0, auto;
+}
+
+#halt {
+	height: 100vh;
+	width: : 100vw;
+	visibility: hidden;
+	background-color: black;
+	font-size: 30px;
+	font-family: Verdana, Arial, sans-serif;
+	text-align: center;
+}
+
+#halt strong {
+	color: #ff7e00;
+	position: absolute;
+    top:  40vh;
+    left: 40vw;
+} /*A ameliorer*/
+
+audio {
+	display: none;
+}
