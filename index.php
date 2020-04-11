@@ -27,7 +27,7 @@
 
 
 <!---------------------------
-End of the world
+End of the fucking world!
 --------------------------->
 
 </div>
