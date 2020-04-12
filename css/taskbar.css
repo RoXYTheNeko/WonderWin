@@ -14,7 +14,7 @@
 
 .start {
 	font-weight: bold;
-	font-size: 0.8em;
+	font-size: 0.7em;
 	border: outset 2px;
 	display: flex;
 	padding: 0 2px;
@@ -73,11 +73,11 @@
 	transform: rotate(-90deg);
 } 
 
-/* Style the buttons that are used to open the tab content */
 .items_menu button {
 	background-color: inherit;
 	color: black;
-	padding: 0 10px;
+	margin: 0 5px;
+	padding: 0 5px;
 	width: 180px;
 	border: none;
 	outline: none;
@@ -86,9 +86,10 @@
 	display: flex;
 }
 
-/* Change background color of buttons on hover */
+/* Propriétés de boutton du menu lorsqu'elle est survolée */
 .items_menu button:hover, .items_menu button:active {
-	background-color: #b0b0b0;
+	background-color: #00027c;
+	color: white;
 }
 
 .items_menu p {
@@ -112,6 +113,6 @@
 }
 
 .clock {
-	margin: 4px;
+	margin: 2px;
 }
 

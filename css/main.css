@@ -52,6 +52,10 @@ a:link, a:visited {
 	text-shadow: 1px 1px #333;
 }
 
+/*.links p:focus {
+	background-color: #00027c;
+} Ne fonctionne pas :c */ 
+
 .frame {
 	background-color: #c2c2c2;
 	position: absolute;
