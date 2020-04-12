@@ -78,6 +78,12 @@ function windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime) {
 EXPLORER
 -----------------------------------------*/
 
+function contentExplorer() {
+	var content = elemCreate("div", {}, "");
+	/*var ... child*/
+	return content;
+}
+
 function explorer() {
 
 	var execTime = Date.now()+"";
@@ -86,7 +92,7 @@ function explorer() {
 	var wTitle = "Mes Créations";
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
-	var docker = elemCreate("div", {class:"docker"}, "LOLILOL");
+	var docker = contentExplorer;
 
  	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
@@ -99,6 +105,8 @@ function explorer() {
 
 var iconCreas = document.getElementById("iconCreas");
 iconCreas.ondblclick = explorer;
+
+
 
 /*---------------------------------------
 MINESWEEPER
