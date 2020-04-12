@@ -46,15 +46,15 @@ a:link, a:visited {
 	/*border: 1px solid black;*/
 }
 
-.links a {
+.links p {
 	font-size: 9px;
 	color: white !important;
 	text-shadow: 1px 1px #333;
 }
 
-/* .links p:focus {
+.links p:focus {
 	background-color: #00027c;
-} Ne fonctionne pas :c */ 
+}
 
 .frame {
 	background-color: #c2c2c2;
