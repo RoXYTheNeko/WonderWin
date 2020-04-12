@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Roxanne WAGNER</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/window.css">
+	<link rel="stylesheet" type="text/css" href="css/taskbar.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+
+	<script type="text/javascript" src="js/clock.js"></script> 
+	
+
+</head>
+<body>
+	<div id="desktop">
+
+		<!---------------------------
+Icônes 
+--------------------------->
+
+	<table class="links">
+		<tr>
+			<td align="center">
+				<a href="#" id="iconBook" ondblclick="#">
+					<img src="icons/book.ico" alt="Icone Mon Book" width="32" height="32">
+					<p>Mon Book</p>
+				</a>
+			</td>
+		<td align="center">
+			<a href="#" 
+				id="iconMinesweeper">
+				<img src="icons/minesweeper.png" alt="Icone Démineur" width="32" height="32">
+				<p>Démineur</p>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+				<a href="#" 
+				id="iconCreas">
+				<img src="icons/pencil.ico" alt="Icone Mes Créations" width="32" height="32">
+				<p>Mes Créations</p>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<a href="#" id="iconCv" ondblclick="#">
+				<img src="icons/floppys.ico" alt="Icone Mon CV" width="32" height="32">
+				<p>Mon CV</p>
+			</a>
+		</td>
+	</tr>
+</table>
+
+
+<!---------------------------
+APPS -> Crédits
+--------------------------->
+
+
+<div class="center-thing" id="credits">
+	<div class="wTopBar"> 
+		<p>Crédits</p>
+		<div class="button-3d">
+			<button id="btnMinimize" onclick="closeCredits()"></button>
+			<button id="btnMaximize" onclick="resizeCredits()"></button>
+			<button id="bntClose" onclick="closeCredits()"></button>
+		</div>
+	</div>
+	<iframe src="prgms/credits.html" width="748" height="574" scrolling="yes"></iframe>
+</div>
+
+
+
+<!---------------------------
+Barre de tâches
+--------------------------->
+
+<div class="taskbar">
+	<a href="#" class="start">
+		<img src="icons/still.gif" alt="neko-start" width="20" height="20">
+		<p>Start</p>
+	</a>
+
+	<div class="s_menu">
+		<div class="gradient_menu">
+			<h1>Roxanne WAGNER</h1>
+		</div>
+		<div class="items_menu">
+			<button class="tablinks" onclick="alert('Hello there!')">
+				<img src="icons/still.gif" alt="neko-start" width="32" height="32"><p>Pink</p>
+			</button>
+			<button class="tablinks" onclick="openCredits()">
+				<img src="icons/text.png" alt="Icône Crédits" width="32" height="32"><p>Crédits</p>
+			</button>
+			<button class="tablinks" onclick="showQHalt()">
+				<img src="icons/shutdown.png" alt="Icone Arrêt" width="32" height="32"><p>Arrêter l'ordinateur</p>
+			</button>
+		</div>
+	</div>
+
+	<div class="items_bar">
+		<button id="explorerItem">LOLILOL</button>
+	</div>
+
+
+	<div class="systray">
+		<div class="clock">
+			<span id="time"></span>
+		</div>
+		
+	</div>
+</div>
+
+
+<!---------------------------
+Shutdown script
+--------------------------->
+<div id="bgHalt">
+
+	<div class="center-thing" id="questionHalt">
+		<div class="wTopBar"> 
+			<p>Arrêter l'ordinateur</p>
+			<div class="button-3d">
+				<button id="btnClose" onclick="hideQHalt()"></button>
+			</div>
+		</div>
+		<div class="grayBg">
+			<button id="comfirmBtn" onclick="triggerShutdown()">Yes</button>
+			<button id="comfirmBtn" onclick="hideQHalt()">Noooo!</button>
+		</div>
+
+	</div>
+</div>
+
+<div class="center-thing" id="halt">
+	<strong>It's now safe to turn off<br>
+	your computer.</strong>
+</div>
+
+<!---------------------------
+End of the fucking world!
+--------------------------->
+
+</div>
+
+<script type="text/javascript" src="js/dragme.js"></script> 
+<script type="text/javascript" src="js/kitty.js"></script>
+<script type="text/javascript" src="js/clock.js"></script> 
+
+
+</body>
+</html>
+
+
+<!---------------------------
+Startup Sound script
+--------------------------->
+
+<!--  <audio id="startup-sound" controls">
+  <source src="sounds/QUACK.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>  -->
