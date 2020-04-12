@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Roxanne WAGNER</title>
+	<title>RoXY's WonderWin</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/window.css">
 	<link rel="stylesheet" type="text/css" href="css/taskbar.css">
@@ -16,7 +16,7 @@
 <body>
 	<div id="desktop">
 
-		<!---------------------------
+<!---------------------------
 Icônes 
 --------------------------->
 
@@ -55,26 +55,6 @@ Icônes
 	</tr>
 </table>
 
-
-<!---------------------------
-APPS -> Crédits
---------------------------->
-
-
-<div class="center-thing" id="credits">
-	<div class="wTopBar"> 
-		<p>Crédits</p>
-		<div class="button-3d">
-			<button id="btnMinimize" onclick="closeCredits()"></button>
-			<button id="btnMaximize" onclick="resizeCredits()"></button>
-			<button id="bntClose" onclick="closeCredits()"></button>
-		</div>
-	</div>
-	<iframe src="prgms/credits.html" width="748" height="574" scrolling="yes"></iframe>
-</div>
-
-
-
 <!---------------------------
 Barre de tâches
 --------------------------->
@@ -93,7 +73,7 @@ Barre de tâches
 			<button class="tablinks" onclick="alert('Hello there!')">
 				<img src="icons/still.gif" alt="neko-start" width="32" height="32"><p>Pink</p>
 			</button>
-			<button class="tablinks" onclick="openCredits()">
+			<button class="tablinks" id="itemCredits">
 				<img src="icons/text.png" alt="Icône Crédits" width="32" height="32"><p>Crédits</p>
 			</button>
 			<button class="tablinks" onclick="showQHalt()">

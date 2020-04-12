@@ -9,17 +9,6 @@ function elemCreate(type,dicoAtt,text){
     return dom;
 }
 
-
-/*Crédits*/
-
-function openCredits() {
-	document.getElementById("credits").style.visibility = "visible";
-} 
-
-function closeCredits() {
-  	document.getElementById("credits").style.visibility = "hidden";
-  }
-
 /*Shutdown*/
 
 function showQHalt() {
@@ -36,15 +25,6 @@ function hideQHalt() {
 function triggerShutdown() {
 	document.getElementById("halt").style.visibility = "visible";
 } 
-
-/*
-function selectOn() {
-	 document.body.style.backgroundColor = "#0b7bcd"; 
-}
-
-function selectOff() {
-	 document.body.style.backgroundColor = "transparent"; 
-}*/
 
 /*Creer une fenetre*/
 
@@ -88,10 +68,10 @@ function windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime) {
 	frame.append(wTopBar); // On assemble wTopBar dans le cadre de la fenêtre.
 	frame.append(docker); // On assemble le conteneur dans le cadre de la fenêtre.
 
-	frame.style.width=size.width;
-	frame.style.height=size.height;
+	frame.style.width=size.width; //On applique la largeur de la fenêtre.
+	frame.style.height=size.height; // Puis la largeur.
 
-	return frame;
+	return frame; // On renvoie le contour de la fenêtre 
 }
 
 /*---------------------------------------
@@ -132,7 +112,7 @@ function minesweeper() {
 	var wTitle = "Démineur";
 	var size = {width: "178px", height: "258px"};
 	var butts = buttonsSelect(["minimize", "close"]);
-	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "223", width:173, scrolling: "no"});
+	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "232", width:173, scrolling: "no"});
 
  	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
  	var desktop = document.getElementById("desktop");
@@ -146,3 +126,31 @@ function minesweeper() {
 var iconMinesweeper = document.getElementById("iconMinesweeper");
 
 iconMinesweeper.ondblclick = minesweeper;
+
+/*---------------------------------------
+CRÉDITS
+-----------------------------------------*/
+
+function credits() {
+	console.log("1");
+
+	var execTime = Date.now()+"";
+
+	var name = "credits";
+	var wTitle = "Crédits";
+	var size = {width: "750px", height: "600px"};
+	var butts = buttonsSelect(["minimize", "resize", "close"]);
+	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"});
+
+ 	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
+ 	var desktop = document.getElementById("desktop");
+ 	desktop.append(window);
+
+ 	dragElement(window, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+ 	console.log(wTitle+" #"+execTime+" opened! so Patate!");
+}
+
+var itemCredits = document.getElementById("itemCredits");
+
+itemCredits.onclick = credits;
