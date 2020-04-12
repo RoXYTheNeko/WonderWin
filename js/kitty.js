@@ -82,11 +82,9 @@ function selectOff() {
 function buttonsSelect(tab){
 	var butts = elemCreate("div", {class:"button-3d"}, "");
 	for(var key in tab) {
-		console.log(tab[key]);
-
 		var button;
 		switch(tab[key]){
-			case close:
+			case "close":
 				button = elemCreate("button", {id:"btnClose"}, "");
 				button.onclick = function(event) {
 					var windoze = event.target.parentElement.parentElement.parentElement;
@@ -94,11 +92,11 @@ function buttonsSelect(tab){
 				}
 				break;
 
-			case resize:
+			case "resize":
 				button = elemCreate("button", {id:"btnResize"}, "");
 				break;
 
-			case minimize:
+			case "minimize":
 				button = elemCreate("button", {id:"btnMinimize"}, "");
 				break;
 		}
@@ -111,9 +109,9 @@ function buttonsSelect(tab){
 
 var butts = buttonsSelect(["close", "resize", "minimize"]);
 
-var pos = {150}  // On s'est arrêtés là !
+/*var pos = {150};  // On s'est arrêtés là !
 
 function windowCreate(name, pos, size, butts, docker) {
 
 
-}
+}*/

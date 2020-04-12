@@ -7,7 +7,7 @@ Shutdown script
 		<div class="wTopBar"> 
 			<p>Arrêter l'ordinateur</p>
 			<div class="button-3d">
-				<button id="close" onclick="hideQHalt()"></button>
+				<button id="btnClose" onclick="hideQHalt()"></button>
 			</div>
 		</div>
 		<div class="grayBg">
