@@ -10,19 +10,6 @@ function elemCreate(type,dicoAtt,text){
 }
 
 
-
-/*Minesweeper*/
-
-function openMinesweeper() {
-	document.getElementById("minesweeper").style.visibility = "visible";
-} 
-
-function closeMinesweeper() {
-  	document.getElementById("minesweeper").style.visibility = "hidden";
-  }
-
-
-
 /*Crédits*/
 
 function openCredits() {
@@ -91,9 +78,9 @@ function buttonsSelect(tab){
 
 /*var pos = {150};  // On s'est arrêtés là !*/
 
-function windowCreate(name, wTitle, /*pos,*/ size, butts, docker) {
-	var frame = elemCreate("div", {class:"frame", id:name}, "");
-	var wTopBar = elemCreate("div", {class:"wTopBar", id:name+"Header"}, "");
+function windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime) {
+	var frame = elemCreate("div", {class:"frame", id:name+execTime}, "");
+	var wTopBar = elemCreate("div", {class:"wTopBar", id:name+"Header"+execTime}, "");
 	var title = elemCreate("p", {}, wTitle);
 
 	wTopBar.append(title); // On assemble title dans wTopBar.
@@ -107,21 +94,55 @@ function windowCreate(name, wTitle, /*pos,*/ size, butts, docker) {
 	return frame;
 }
 
+/*---------------------------------------
+EXPLORER
+-----------------------------------------*/
+
 function explorer() {
-	console.log("Patate!");
+
+	var execTime = Date.now()+"";
+
 	var name = "explorer";
 	var wTitle = "Mes Créations";
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = elemCreate("div", {class:"docker"}, "LOLILOL");
 
- 	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker);
+ 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
  	var desktop = document.getElementById("desktop");
- 	desktop.append(window);
+ 	desktop.append(win);
 
- 	dragElement(window, name+"Header"); // On appelle dragElement avec l'id du header.
+ 	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+ 	console.log(wTitle+" #"+execTime+" opened! so Patate!");
 }
 
 var iconCreas = document.getElementById("iconCreas");
 iconCreas.ondblclick = explorer;
 
+/*---------------------------------------
+MINESWEEPER
+-----------------------------------------*/
+
+function minesweeper() {
+
+	var execTime = Date.now()+"";
+
+	var name = "minesweeper";
+	var wTitle = "Démineur";
+	var size = {width: "178px", height: "258px"};
+	var butts = buttonsSelect(["minimize", "close"]);
+	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "223", width:173, scrolling: "no"});
+
+ 	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
+ 	var desktop = document.getElementById("desktop");
+ 	desktop.append(window);
+
+ 	dragElement(window, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+ 	console.log(wTitle+" #"+execTime+" opened! so Patate!");
+}
+
+var iconMinesweeper = document.getElementById("iconMinesweeper");
+
+iconMinesweeper.ondblclick = minesweeper;

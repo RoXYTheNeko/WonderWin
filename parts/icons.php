@@ -12,7 +12,7 @@ Icônes
 			</td>
 		<td align="center">
 			<a href="#" 
-				id="iconMinesweeper" ondblclick="openMinesweeper()" >
+				id="iconMinesweeper">
 				<img src="icons/minesweeper.png" alt="Icone Démineur" width="32" height="32">
 				<p>Démineur</p>
 			</a>

@@ -58,32 +58,14 @@ a:link, a:visited {
 	text-shadow: 1px 1px #333;
 }
 
-#explorer {
+.frame {
+	background-color: #c2c2c2;
 	position: absolute;
 	border: outset 3px;
 	display: block;
 	margin: 0, auto;
 }
 
-#explorerHeader {
-	background-color: white;
-}
-
-.frame {
-	background-color: #c2c2c2;
-
-}
-
-
-
-#minesweeper {
-	width: 178px;
-	height: 258px;
-	border: outset 3px;
-	display: block;
-	visibility: hidden;
-	margin: 0, auto;
-}
 
 #credits {
 	width: 750px;

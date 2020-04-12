@@ -1,21 +1,4 @@
 
-
-<!---------------------------
-Minesweeper
---------------------------->
-
-
-<div class="center-thing" id="minesweeper">
-	<div class="wTopBar"> 
-		<p>Démineur</p>
-		<div class="button-3d">
-			<button id="btnMinimize" onclick="closeMinesweeper()"></button>
-			<button id="btnClose" onclick="closeMinesweeper()"></button>
-		</div>
-	</div>
-	<iframe src="prgms/minesweeper/minecore.html" height="223" width="173" scrolling="no"></iframe>
-</div>
-
 <!---------------------------
 Crédits
 --------------------------->
