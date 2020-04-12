@@ -88,9 +88,9 @@ function explorer() {
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = elemCreate("div", {class:"docker"}, "LOLILOL");
 
- 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
+ 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
- 	desktop.append(win);
+ 	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
 
@@ -114,11 +114,11 @@ function minesweeper() {
 	var butts = buttonsSelect(["minimize", "close"]);
 	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "232", width:173, scrolling: "no"});
 
- 	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
+ 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
- 	desktop.append(window);
+ 	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
- 	dragElement(window, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+ 	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
 
  	console.log(wTitle+" #"+execTime+" opened! so Patate!");
 }
@@ -140,11 +140,11 @@ function credits() {
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"});
 
- 	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);
+ 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
- 	desktop.append(window);
+ 	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
- 	dragElement(window, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+ 	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
 
  	console.log(wTitle+" #"+execTime+" opened! so Patate!");
 }

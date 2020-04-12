@@ -20,14 +20,14 @@
     float: left;
     border-right-color: #424242;
     border-bottom-color: #424242;
-    margin: 1px 1px 0 1px;
+    margin: 0.5px 1px;
     color: transparent;
     text-decoration: none;
 }
 
 .button-3d button  {
 	background: #d6d6ce;
-	height: 15.5px;
+	height: 16px;
     width: 15.5px;
 }
 
