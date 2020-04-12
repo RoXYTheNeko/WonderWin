@@ -33,7 +33,6 @@ Barre de tâches
 	<div class="systray">
 		<div class="clock">
 			<span id="time"></span>
-			<script type="text/javascript">window.onload = time('time');</script>
 		</div>
 		
 	</div>

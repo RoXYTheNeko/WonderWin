@@ -10,24 +10,6 @@ function elemCreate(type,dicoAtt,text){
 }
 
 
-// Startup Sound
-
-function openExplorer() {
-	document.getElementById("explorer").style.visibility = "visible";
-	document.getElementById("explorerItem").style.visibility = "visible";
-} 
-
-function closeExplorer() {
-  	document.getElementById("explorer").style.visibility = "hidden";
-	document.getElementById("explorerItem").style.visibility = "hidden";
-
-  }
-
-function resizeExplorer() {
-	document.getElementById("explorer").style.height = "100%"; 
-  }
-
-
 
 /*Minesweeper*/
 
@@ -100,18 +82,46 @@ function buttonsSelect(tab){
 				button = elemCreate("button", {id:"btnMinimize"}, "");
 				break;
 		}
-
 		butts.append(button);
 	}
-
 	return butts;
 }
 
-var butts = buttonsSelect(["close", "resize", "minimize"]);
-
-/*var pos = {150};  // On s'est arrêtés là !
-
-function windowCreate(name, pos, size, butts, docker) {
 
 
-}*/
+/*var pos = {150};  // On s'est arrêtés là !*/
+
+function windowCreate(name, wTitle, /*pos,*/ size, butts, docker) {
+	var frame = elemCreate("div", {class:"frame", id:name}, "");
+	var wTopBar = elemCreate("div", {class:"wTopBar", id:name+"Header"}, "");
+	var title = elemCreate("p", {}, wTitle);
+
+	wTopBar.append(title); // On assemble title dans wTopBar.
+	wTopBar.append(butts); // On assemble les boutons dans wTopBar.
+	frame.append(wTopBar); // On assemble wTopBar dans le cadre de la fenêtre.
+	frame.append(docker); // On assemble le conteneur dans le cadre de la fenêtre.
+
+	frame.style.width=size.width;
+	frame.style.height=size.height;
+
+	return frame;
+}
+
+function explorer() {
+	console.log("Patate!");
+	var name = "explorer";
+	var wTitle = "Mes Créations";
+	var size = {width: "750px", height: "600px"};
+	var butts = buttonsSelect(["minimize", "resize", "close"]);
+	var docker = elemCreate("div", {class:"docker"}, "LOLILOL");
+
+ 	var window =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker);
+ 	var desktop = document.getElementById("desktop");
+ 	desktop.append(window);
+
+ 	dragElement(window, name+"Header"); // On appelle dragElement avec l'id du header.
+}
+
+var iconCreas = document.getElementById("iconCreas");
+iconCreas.ondblclick = explorer;
+

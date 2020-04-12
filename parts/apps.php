@@ -1,22 +1,3 @@
-<!---------------------------
-Explorer 
---------------------------->
-
-
-<div class="center-thing" id="explorer">
-	<div class="wTopBar" id="explorerheader"> 
-		<p>Mes Créations</p>
-		<div class="button-3d">
-			<button id="btnMinimize" onclick="closeExplorer()"></button>
-			<button id="btnMaximize" onclick="resizeExplorer()"></button>
-			<button id="btnClose" onclick="closeExplorer()"></button>
-		</div>
-	</div>
-
-</div>
-
-<script type="text/javascript" src="js/dragme.js"></script>
-
 
 
 <!---------------------------

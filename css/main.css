@@ -20,7 +20,7 @@ a:link, a:visited {
 	color: black;
 }
 
-.desktop {
+#desktop {
 	/*background-color: #008080;*/
 	background-image: url(../images/clouds.bmp);
 	background-size: cover;
@@ -60,20 +60,18 @@ a:link, a:visited {
 
 #explorer {
 	position: absolute;
-	width: 750px;
-	height: 600px;
 	border: outset 3px;
 	display: block;
-	visibility: hidden;
 	margin: 0, auto;
 }
 
-#explorerheader {
+#explorerHeader {
 	background-color: white;
 }
 
-.exContener {
-	background-color: white;
+.frame {
+	background-color: #c2c2c2;
+
 }
 
 

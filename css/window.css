@@ -32,7 +32,7 @@
 }
 
 
-.button-3d #btnMaximize {
+.button-3d #btnResize {
 	background-image: url(../icons/maximize.png);
 	background-position: 1px 1px 0 0;
     background-repeat: no-repeat;

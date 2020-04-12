@@ -1,4 +1,4 @@
-// Ce code n'est pas de moi, mais je l'ai modifié.
+// La fx "time" n'est pas de moi, mais je l'ai modifié.
 function time(id)
 {
         date = new Date;
@@ -24,4 +24,8 @@ function time(id)
         document.getElementById(id).innerHTML = outString;
         setTimeout('time("'+id+'");','1000');
         return true;
+}
+
+window.onload = function() {
+        time('time')
 }
