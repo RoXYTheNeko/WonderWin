@@ -124,7 +124,6 @@ function minesweeper() {
 }
 
 var iconMinesweeper = document.getElementById("iconMinesweeper");
-
 iconMinesweeper.ondblclick = minesweeper;
 
 /*---------------------------------------
@@ -132,7 +131,6 @@ CRÉDITS
 -----------------------------------------*/
 
 function credits() {
-	console.log("1");
 
 	var execTime = Date.now()+"";
 
@@ -152,5 +150,5 @@ function credits() {
 }
 
 var itemCredits = document.getElementById("itemCredits");
-
 itemCredits.onclick = credits;
+
