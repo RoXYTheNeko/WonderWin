@@ -142,3 +142,9 @@
 	max-width: 16px;
 	display: block;
 }
+
+#snowman {
+	max-height: 16px;
+	max-width: 16px;
+	display: block;
+}
