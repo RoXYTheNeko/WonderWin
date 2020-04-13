@@ -104,7 +104,7 @@
 	visibility: hidden;
 }
 
-.systray {
+#systray {
 	font-size: 9px;
 	align-self: right;
 	background-color: #c0c0c0;
@@ -115,6 +115,20 @@
 
 .clock {
 	margin: 2px 6px;
+}
+
+#iconVolume {
+	max-height: 16px;
+	max-width: 16px;
+	display: block;
+	visibility: visible;
+}
+
+#iconMutedVolume {
+	max-height: 16px;
+	max-width: 16px;
+	display: block;
+	visibility: hidden;
 }
 
 #github {

@@ -92,7 +92,7 @@ function explorer() {
 	var wTitle = "Mes Créations";
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
-	var docker = contentExplorer;
+	var docker = contentExplorer();
 
  	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
@@ -146,7 +146,7 @@ function credits() {
 	var wTitle = "Crédits";
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
-	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"});
+	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"}, "");
 
  	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
@@ -160,3 +160,67 @@ function credits() {
 var itemCredits = document.getElementById("itemCredits");
 itemCredits.onclick = credits;
 
+/*-------------------------------
+Gestion du son
+-------------------------------*/
+
+function soundInit() {
+	var execTime = Date.now()+"";
+	var icon = elemCreate("img", {src: "icons/sound_on.png"}, "");
+	
+ 	var systray = document.getElementById("systray");
+ 	systray.prepend(icon); //Création de l'icone dans la div systray.
+
+ 	icon.onclick = function() {
+ 		var audio = elemCreate("audio", {controls: ""}, "");
+		var source = elemCreate("source", {src:"sounds/startup.mp3", type:"audio/mpeg"}, "");
+		audio.append(source);
+ 		audio.play(); // Joue le son 
+ 		console.log("Ding!")
+ 	}
+
+ 	console.log("Sound "+execTime+" opened!");
+}
+var systray = document.getElementById("systray");
+soundInit();
+
+
+/*// Mute un élément
+function muteMe(elem) {
+    elem.muted = true;
+    elem.pause();
+}
+
+// Mute tout le contenu de la page
+function mutePage() {
+    var elems = document.querySelectorAll("video, audio");
+
+    [].forEach.call(elems, function(elem) { muteMe(elem); });
+	document.getElementById("iconVolume").style.visibility = "hidden";
+	document.getElementById("iconMutedVolume").style.visibility = "visible";
+
+}
+
+var iconVolume = document.getElementById("iconVolume");
+iconVolume.onclick = mutePage;
+
+// Unmute un élément
+function unmuteMe(elem) {
+    elem.muted = true;
+    elem.play();
+}
+
+// Unmute tout le contenu de la page
+function unmutePage() {
+    var elems = document.querySelectorAll("video, audio");
+
+    [].forEach.call(elems, function(elem) { unmuteMe(elem); });
+	document.getElementById("iconMutedVolume").style.visibility = "hidden";
+	document.getElementById("iconVolume").style.visibility = "visible";
+}
+
+var iconMutedVolume = document.getElementById("iconMutedVolume");
+iconMutedVolume.onclick = unmutePage;
+
+
+*/
