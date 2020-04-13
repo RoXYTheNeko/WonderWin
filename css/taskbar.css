@@ -110,9 +110,15 @@
 	background-color: #c0c0c0;
 	border: inset 2px white;
 	margin-left: auto;
+	display: flex;
 }
 
 .clock {
-	margin: 2px;
+	margin: 2px 6px;
 }
 
+#github {
+	max-height: 16px;
+	max-width: 16px;
+	display: block;
+}
