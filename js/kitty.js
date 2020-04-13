@@ -93,12 +93,15 @@ function explorer() {
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = contentExplorer();
-
  	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
  	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, wTitle);
+	var taskBar = document.getElementById("prgms_bar");
+	taskBar.append(itemTask);
 
  	console.log(wTitle+" #"+execTime+" opened! so Patate!");
 }
@@ -121,12 +124,15 @@ function minesweeper() {
 	var size = {width: "178px", height: "258px"};
 	var butts = buttonsSelect(["minimize", "close"]);
 	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "232", width:173, scrolling: "no"});
-
  	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
  	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+ 	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, wTitle);
+	var taskBar = document.getElementById("prgms_bar");
+	taskBar.append(itemTask);
 
  	console.log(wTitle+" #"+execTime+" opened! so Patate!");
 }
@@ -147,12 +153,15 @@ function credits() {
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"}, "");
-
  	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
  	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+ 	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, wTitle);
+	var taskBar = document.getElementById("prgms_bar");
+	taskBar.append(itemTask);
 
  	console.log(wTitle+" #"+execTime+" opened! so Patate!");
 }
