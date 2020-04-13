@@ -13,6 +13,11 @@
 body {
 	overflow: hidden;
 	font-family: PxSans, Verdana, Arial, sans-serif;
+	cursor: url(../normal.cur), auto;
+
+}
+a {
+	cursor: url(../normal.cur), auto;
 }
 
 a:link, a:visited {

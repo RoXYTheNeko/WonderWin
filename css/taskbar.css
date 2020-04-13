@@ -9,7 +9,6 @@
 	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
-	
 }
 
 .start {
@@ -82,8 +81,8 @@
 	border: none;
 	outline: none;
 	text-align: left;
-	cursor: pointer;
 	display: flex;
+	cursor: url(../normal.cur), auto;
 }
 
 /* Propriétés de boutton du menu lorsqu'elle est survolée */

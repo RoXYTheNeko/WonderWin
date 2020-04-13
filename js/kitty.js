@@ -181,78 +181,41 @@ var systray = document.getElementById("systray");
 soundInit();
 
 
-function soundMuteOption() {
-	var execTime = Date.now()+"";
-	switch(soundstate) {
-		case true:
-			document.getElementById("iconSound").onclick = function(event) {
-				event.target.remove();
- 			}
+function soundMute(elem) {
+	var idIcon = document.getElementById("iconSound");
+		if(soundstate = true) {
+			elem.muted = true;
+			/*elem.pause();*/
+			idIcon.remove();
 			var icon = elemCreate("img", {src: "icons/sound_off.png", id: "iconSound"}, "");
  			var systray = document.getElementById("systray");
  			systray.prepend(icon); //Création de l'icone dans la div systray.
+ 			soundstate = false;
  			console.log("Sound muted!");
-			break;
-
-		case false:
-			document.getElementById("iconSound").onclick = function(event) {
-				event.target.remove();
  			}
+
+			else {
+			elem.muted = false;
+			/*elem.play();*/
+			idIcon.remove();
 			var icon = elemCreate("img", {src: "icons/sound_on.png", id: "iconSound"}, "");
  			var systray = document.getElementById("systray");
  			systray.prepend(icon); //Création de l'icone dans la div systray.
-
+ 			soundstate = true;
  			var audio = elemCreate("audio", {controls: ""}, "");
 			var source = elemCreate("source", {src:"sounds/startup.mp3", type:"audio/mpeg"}, "");
 			audio.append(source);
  			audio.play(); // Joue le son 
  			console.log("Ding!");
- 
-			break;
 	}
 }
 
-var iconSound = document.getElementById("iconSound");
-iconSound.onclick = soundMuteOption();
+document.getElementById("iconSound").onclick = soundMute;
 
-
-
-/*// Mute un élément
-function muteMe(elem) {
-    elem.muted = true;
-    elem.pause();
-}
 
 // Mute tout le contenu de la page
 function mutePage() {
     var elems = document.querySelectorAll("video, audio");
-
-    [].forEach.call(elems, function(elem) { muteMe(elem); });
-	document.getElementById("iconVolume").style.visibility = "hidden";
-	document.getElementById("iconMutedVolume").style.visibility = "visible";
-
+    [].forEach.call(elems, function(elem) { soundMute(elem); });
 }
 
-var iconVolume = document.getElementById("iconVolume");
-iconVolume.onclick = mutePage;
-
-// Unmute un élément
-function unmuteMe(elem) {
-    elem.muted = true;
-    elem.play();
-}
-
-// Unmute tout le contenu de la page
-function unmutePage() {
-    var elems = document.querySelectorAll("video, audio");
-
-    [].forEach.call(elems, function(elem) { unmuteMe(elem); });
-	document.getElementById("iconMutedVolume").style.visibility = "hidden";
-	document.getElementById("iconVolume").style.visibility = "visible";
-}
-
-var iconMutedVolume = document.getElementById("iconMutedVolume");
-iconMutedVolume.onclick = unmutePage;
-
-
-*/
