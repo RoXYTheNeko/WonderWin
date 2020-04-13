@@ -1,7 +1,7 @@
 @font-face {
- font-family: "PxSans";
- src: url("../fonts/px-sans-nouveaux/px_sans_nouveaux.woff2") format("woff2"),
-        url("../fonts/px-sans-nouveaux/px_sans_nouveaux.woff") format("woff");
+	font-family: "PxSans";
+	src: url("../fonts/px-sans-nouveaux/px_sans_nouveaux.woff2") format("woff2"),
+		url("../fonts/px-sans-nouveaux/px_sans_nouveaux.woff") format("woff");
 }
 
 * {
@@ -16,11 +16,9 @@ body {
 	cursor: url(../normal.cur), auto;
 
 }
-a {
-	cursor: url(../normal.cur), auto;
-}
 
-a:link, a:visited {
+a, a:link, a:visited {
+	cursor: url(../normal.cur), auto;
 	text-decoration: none;
 	color: black;
 }

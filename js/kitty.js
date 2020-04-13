@@ -58,15 +58,22 @@ function buttonsSelect(tab){
 
 /*var pos = {150};  // On s'est arrêtés là !*/
 
-function windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime) {
+function windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime) {
 	var frame = elemCreate("div", {class:"frame", id:name+execTime}, "");
 	var wTopBar = elemCreate("div", {class:"wTopBar", id:name+"Header"+execTime}, "");
-	var title = elemCreate("p", {}, wTitle);
+	var title = elemCreate("p", {class: "prgmTitle"}, prgmTitle);
+	var icon = elemCreate("img", {src: prgmIcon, height: 16, width: 16}, "");
+	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, prgmTitle);
+	var taskBar = document.getElementById("prgms_bar");
 
-	wTopBar.append(title); // On assemble title dans wTopBar.
+	wTopBar.append(icon); // On assemble prgmIcon dans wTopBar.
+	wTopBar.append(prgmTitle); // On assemble title dans wTopBar.
 	wTopBar.append(butts); // On assemble les boutons dans wTopBar.
 	frame.append(wTopBar); // On assemble wTopBar dans le cadre de la fenêtre.
 	frame.append(docker); // On assemble le conteneur dans le cadre de la fenêtre.
+	/*itemTask.prepend(icon); // On assemble l'icône dans le boutton du programme.*/ // Bug à corriger cette ligne empeche l'effet de wTopBar.append(icon);
+	taskBar.append(itemTask); // On assemble le boutton du programme dans la bare des tâches.
+
 
 	frame.style.width=size.width; //On applique la largeur de la fenêtre.
 	frame.style.height=size.height; // Puis la largeur.
@@ -89,21 +96,18 @@ function explorer() {
 	var execTime = Date.now()+"";
 
 	var name = "explorer";
-	var wTitle = "Mes Créations";
+	var prgmTitle = "Mes Créations";
+	var prgmIcon = "icons/pencil.ico"
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = contentExplorer();
- 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
+ 	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
  	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
 
-	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, wTitle);
-	var taskBar = document.getElementById("prgms_bar");
-	taskBar.append(itemTask);
-
- 	console.log(wTitle+" #"+execTime+" opened! so Patate!");
+ 	console.log(prgmTitle+" #"+execTime+" opened! so Patate!");
 }
 
 var iconCreas = document.getElementById("iconCreas");
@@ -120,21 +124,18 @@ function minesweeper() {
 	var execTime = Date.now()+"";
 
 	var name = "minesweeper";
-	var wTitle = "Démineur";
+	var prgmTitle = "Démineur";
+	var prgmIcon = "icons/minesweeper.png"
 	var size = {width: "178px", height: "258px"};
 	var butts = buttonsSelect(["minimize", "close"]);
 	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "232", width:173, scrolling: "no"});
- 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
+ 	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
  	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
 
- 	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, wTitle);
-	var taskBar = document.getElementById("prgms_bar");
-	taskBar.append(itemTask);
-
- 	console.log(wTitle+" #"+execTime+" opened! so Patate!");
+ 	console.log(prgmTitle+" #"+execTime+" opened! so Patate!");
 }
 
 var iconMinesweeper = document.getElementById("iconMinesweeper");
@@ -149,21 +150,18 @@ function credits() {
 	var execTime = Date.now()+"";
 
 	var name = "credits";
-	var wTitle = "Crédits";
+	var prgmTitle = "Crédits";
+	var prgmIcon = "icons/text.png"
 	var size = {width: "750px", height: "600px"};
 	var butts = buttonsSelect(["minimize", "resize", "close"]);
 	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"}, "");
- 	var win =  windowCreate(name, wTitle, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
+ 	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
  	desktop.append(win); //Création de la fenêtre dans la div desktop.
 
  	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
 
- 	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, wTitle);
-	var taskBar = document.getElementById("prgms_bar");
-	taskBar.append(itemTask);
-
- 	console.log(wTitle+" #"+execTime+" opened! so Patate!");
+ 	console.log(prgmTitle+" #"+execTime+" opened! so Patate!");
 }
 
 var itemCredits = document.getElementById("itemCredits");

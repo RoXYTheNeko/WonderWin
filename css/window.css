@@ -6,7 +6,6 @@
 	color: white;
 	font-size: 10px;
 	border-bottom: outset 3px #c2c2c2;
-	justify-content: space-between;
 
 	/*Dégradé*/
 	background: -moz-linear-gradient(left, #00027c 0%, #1988cd 100%);
@@ -23,6 +22,7 @@
     margin: 0.5px 1px;
     color: transparent;
     text-decoration: none;
+    margin-left: auto;
 }
 
 .button-3d button {
