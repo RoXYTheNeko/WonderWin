@@ -52,7 +52,7 @@ a:link, a:visited {
 	text-shadow: 1px 1px #333;
 }
 
-.links p:focus {
+.links p:focus, .links img:focus {
 	background-color: #00027c;
 }
 
