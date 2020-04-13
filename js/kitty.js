@@ -164,25 +164,57 @@ itemCredits.onclick = credits;
 Gestion du son
 -------------------------------*/
 
+var soundstate = true;
+
 function soundInit() {
 	var execTime = Date.now()+"";
-	var icon = elemCreate("img", {src: "icons/sound_on.png"}, "");
+	var icon = elemCreate("img", {src: "icons/sound_on.png", id: "iconSound"}, "");
 	
  	var systray = document.getElementById("systray");
  	systray.prepend(icon); //Création de l'icone dans la div systray.
+ 	
+ 	soundstate = true;
+ 	console.log("Sound initialized at "+execTime+"!");
 
- 	icon.onclick = function() {
- 		var audio = elemCreate("audio", {controls: ""}, "");
-		var source = elemCreate("source", {src:"sounds/startup.mp3", type:"audio/mpeg"}, "");
-		audio.append(source);
- 		audio.play(); // Joue le son 
- 		console.log("Ding!")
- 	}
-
- 	console.log("Sound "+execTime+" opened!");
 }
 var systray = document.getElementById("systray");
 soundInit();
+
+
+function soundMuteOption() {
+	var execTime = Date.now()+"";
+	switch(soundstate) {
+		case true:
+			document.getElementById("iconSound").onclick = function(event) {
+				event.target.remove();
+ 			}
+			var icon = elemCreate("img", {src: "icons/sound_off.png", id: "iconSound"}, "");
+ 			var systray = document.getElementById("systray");
+ 			systray.prepend(icon); //Création de l'icone dans la div systray.
+ 			console.log("Sound muted!");
+			break;
+
+		case false:
+			document.getElementById("iconSound").onclick = function(event) {
+				event.target.remove();
+ 			}
+			var icon = elemCreate("img", {src: "icons/sound_on.png", id: "iconSound"}, "");
+ 			var systray = document.getElementById("systray");
+ 			systray.prepend(icon); //Création de l'icone dans la div systray.
+
+ 			var audio = elemCreate("audio", {controls: ""}, "");
+			var source = elemCreate("source", {src:"sounds/startup.mp3", type:"audio/mpeg"}, "");
+			audio.append(source);
+ 			audio.play(); // Joue le son 
+ 			console.log("Ding!");
+ 
+			break;
+	}
+}
+
+var iconSound = document.getElementById("iconSound");
+iconSound.onclick = soundMuteOption();
+
 
 
 /*// Mute un élément
