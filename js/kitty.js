@@ -64,6 +64,7 @@ function windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, e
 	var title = elemCreate("p", {class: "prgmTitle"}, prgmTitle);
 	var icon = elemCreate("img", {src: prgmIcon, height: 16, width: 16}, "");
 	var itemTask = elemCreate("p", {id: name+"Item"+execTime}, prgmTitle);
+	var iconTask = elemCreate("img", {src: prgmIcon, height: 16, width: 16}, "");
 	var taskBar = document.getElementById("prgms_bar");
 
 	wTopBar.append(icon); // On assemble prgmIcon dans wTopBar.
@@ -71,7 +72,7 @@ function windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, e
 	wTopBar.append(butts); // On assemble les boutons dans wTopBar.
 	frame.append(wTopBar); // On assemble wTopBar dans le cadre de la fenêtre.
 	frame.append(docker); // On assemble le conteneur dans le cadre de la fenêtre.
-	/*itemTask.prepend(icon); // On assemble l'icône dans le boutton du programme.*/ // Bug à corriger cette ligne empeche l'effet de wTopBar.append(icon);
+	itemTask.prepend(iconTask); // On assemble l'icône dans le boutton du programme.
 	taskBar.append(itemTask); // On assemble le boutton du programme dans la bare des tâches.
 
 
