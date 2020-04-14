@@ -53,11 +53,12 @@ a, a:link, a:visited {
 	font-size: 9px;
 	color: white !important;
 	text-shadow: 1px 1px #333;
-}
-
-.links p:focus, .links img:focus {
 	background-color: #00027c;
 }
+
+/*.links p:focus, .links img:focus {
+	background-color: #00027c;
+}*/
 
 .frame {
 	background-color: #c2c2c2;
@@ -74,7 +75,6 @@ a, a:link, a:visited {
 	background-color: rgba(0, 0, 0, 0.5);
 	top: 0;
 	position: fixed;
-
 }
 
 #questionHalt {
