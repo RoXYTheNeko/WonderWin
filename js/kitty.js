@@ -34,7 +34,7 @@ function explorer() {
 	var prgmTitle = "Mes Créations";
 	var prgmIcon = "icons/pencil.ico"
 	var size = {width: "750px", height: "600px"};
-	var butts = buttonsSetup(["minimize", "resize", "close"]);
+	var butts = buttonsSetup(name, ["minimize", "resize", "close"], execTime);
 	var docker = contentExplorer();
  	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime);  // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
@@ -62,7 +62,7 @@ function minesweeper() {
 	var prgmTitle = "Démineur";
 	var prgmIcon = "icons/minesweeper.png"
 	var size = {width: "178px", height: "258px"};
-	var butts = buttonsSetup(["minimize", "close"]);
+	var butts = buttonsSetup(name, ["minimize", "close"], execTime);
 	var docker = elemCreate("iframe", {src: "prgms/minesweeper/minecore.html", height: "232", width:173, scrolling: "no"});
  	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");
@@ -88,7 +88,7 @@ function credits() {
 	var prgmTitle = "Crédits";
 	var prgmIcon = "icons/text.png"
 	var size = {width: "750px", height: "600px"};
-	var butts = buttonsSetup(["minimize", "resize", "close"]);
+	var butts = buttonsSetup(name, ["minimize", "resize", "close"], execTime);
 	var docker = elemCreate("iframe", {src: "prgms/credits.html", height: "574", width:746, scrolling: "yes"}, "");
  	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
  	var desktop = document.getElementById("desktop");

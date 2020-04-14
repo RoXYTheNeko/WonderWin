@@ -9,27 +9,38 @@ function elemCreate(type,dicoAtt,text){
     return dom;
 }
 
+function removeById(id) {
+	var element = document.getElementById(id);
+	element.remove();
+}
+
 /*Creer une fenetre*/
 
-function buttonsSetup(tab){
+function buttonsSetup(name, tab, execTime){
 	var butts = elemCreate("div", {class:"button-3d"}, "");
 	for(var key in tab) {
 		var button;
 		switch(tab[key]){
 			case "close":
-				button = elemCreate("button", {id:"btnClose"}, "");
+				button = elemCreate("button", {class:"btnClose"}, "");
 				button.onclick = function(event) {
-					var windoze = event.target.parentElement.parentElement.parentElement;
-					windoze.remove();
+					removeById(name+execTime);
+					removeById(name+"Item"+execTime);
 				}
 				break;
 
 			case "resize":
-				button = elemCreate("button", {id:"btnResize"}, "");
+				button = elemCreate("button", {class:"btnResize"}, "");
 				break;
 
 			case "minimize":
-				button = elemCreate("button", {id:"btnMinimize"}, "");
+				button = elemCreate("button", {class:"btnMinimize"}, "");
+				button.onclick = function(event) {
+					var windoze = document.getElementById(name+execTime);
+					var item = document.getElementById(name+"Item"+execTime);
+					item.style.border= "outset 2px";
+					windoze.style.visibility = "hidden";
+				}
 				break;
 		}
 		butts.append(button);
@@ -58,9 +69,17 @@ function windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, e
 	itemTask.prepend(iconTask); // On assemble l'icône dans le boutton du programme.
 	taskBar.append(itemTask); // On assemble le boutton du programme dans la bare des tâches.
 
+	itemTask.onclick = function(event) {
+		var windoze = document.getElementById(name+execTime);
+		event.target.style.border= "inset 2px";
+		windoze.style.visibility = "visible";
+	}
+
+
 
 	frame.style.width=size.width; //On applique la largeur de la fenêtre.
 	frame.style.height=size.height; // Puis la largeur.
 
 	return frame; // On renvoie le contour de la fenêtre 
 }
+
