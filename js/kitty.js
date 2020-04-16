@@ -102,3 +102,22 @@ function credits() {
 var itemCredits = document.getElementById("itemCredits");
 itemCredits.onclick = credits;
 
+function shutdown() {
+
+	var execTime = Date.now()+"";
+
+	var name = "shutdown";
+	var prgmTitle = "Arrêter l'ordinateur ?";
+	var prgmIcon = "icons/shutdown.png"
+	var size = {width: "300px", height: "200px"};
+	var butts = buttonsSetup(name, ["close"], execTime);
+	var docker = elemCreate("iframe", {src: "_blank", height: "290", width:190, scrolling: "no"}, "");
+ 	var win =  windowCreate(name, prgmTitle, prgmIcon, /*pos,*/ size, butts, docker, execTime); // Appel de la fonction windowCreate dont la frame est stocké dans "win".
+ 	var bgHalt = document.getElementById("bgHalt");
+ 	var desktop = document.getElementById("desktop");
+ 	desktop.append(win); //Création de la fenêtre dans la div desktop.
+
+ 	dragElement(win, name+"Header"+execTime); // On appelle dragElement avec l'id du header.
+
+ 	console.log(prgmTitle+" #"+execTime+" opened! so Patate!");
+}

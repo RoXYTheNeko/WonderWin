@@ -45,8 +45,8 @@ a, a:link, a:visited {
 	border-spacing: 20px;
 }
 
-.links tr td { 
-	/*border: 1px solid black;*/
+.links td { 
+	text-align: center;	
 }
 
 .links p {
