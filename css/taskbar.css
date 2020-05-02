@@ -77,13 +77,15 @@
 	background-color: inherit;
 	color: black;
 	margin: 0 5px;
-	padding: 0 5px;
+	padding: 10px 5px;
 	width: 180px;
 	border: none;
 	outline: none;
 	text-align: left;
 	display: flex;
 	cursor: url(../normal.cur), auto;
+	font-family: PxSans, sans-serif;
+	font-size: 9px;
 }
 
 /* Propriétés de boutton du menu lorsqu'elle est survolée */
@@ -92,10 +94,8 @@
 	color: white;
 }
 
-.items_menu p {
-	margin: 10px 0;
-	font-family: PxSans, sans-serif;
-	font-size: 9px;
+.items_menu img {
+	padding: -10px 5px;
 }
 
 #prgms_bar {
